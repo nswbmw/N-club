@@ -1,0 +1,14 @@
+body{background-color:#f9f9f7;padding-top:100px}
+.container{width:100%;max-width:1100px;margin:0 auto}
+.navbar{height:60px;line-height:60px;background-color:rgba(255,255,255,.9)!important}
+.flash{max-width:1100px;margin:0 auto 20px}
+.summary{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.topic{margin-top:10px;color:rgba(0,0,0,.4);font-size:.9rem}
+.content{font-size:16px;line-height:24px}
+.userCard{height:48px;margin-bottom:10px}
+.userCard img{width:48px!important;height:48px;float:left;margin-right:15px}
+.userCard .info{line-height:48px}
+.list img{width:40px}
+.ui.pagination{margin-top:10px!important}
+.ui.comments{max-width:100%;font-size:16px}
+.ui.menu .item:before{width:0}

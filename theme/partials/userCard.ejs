@@ -1,0 +1,29 @@
+<% var userInfo = yield $User.getUserByName(name) %>
+
+<div class="ui cards">
+  <div class="card">
+    <div class="content">
+      <div class="userCard">
+        <img src="<%=: userInfo.email | gravatar %>">
+        <div class="info">
+          <p><%= userInfo.name %></p>
+          <p class="meta"><%= userInfo.gender %></p>
+        </div>
+      </div>
+      <div class="description">
+        <%= userInfo.signature %>
+      </div>
+    </div>
+    <% if ($this.session.user) { %>
+      <div class="extra content">
+        <a href="/user/<%= userInfo.name %>" class=""><i class="home icon"></i>个人主页</a>
+        <a href="#" class="right floated"><i class="setting icon"></i>设置</a>
+      </div>
+    <% } else { %>
+      <div class="extra content">
+        <a class=""><i class="send icon"></i>私信</a>
+        <a class="right floated"><i class="plus icon"></i>加好友</a>
+      </div>
+    <% } %>
+  </div>
+</div>

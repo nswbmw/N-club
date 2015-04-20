@@ -1,0 +1,28 @@
+<%
+  var count = yield $Topic.getTopicsCount($this.query.tab);
+  var pages = Math.ceil(count / 10);
+  var page = +$this.query.p || 1;
+  var tab = $this.query.tab || '';
+  var items = [page-2, page-1, page, page+1, page+2];
+  var prePage = '?tab=' + tab + '&p=' + (page - 1);
+  var nextPage = '?tab=' + tab + '&p=' + (page + 1);
+%>
+<div class="ui pagination menu">
+  <% if (page && page > 1) { %>
+    <a class="icon item" href="?tab=<%= tab %>&p=<%= page - 1 %>">
+      <i class="left arrow icon"></i>
+    </a>
+  <% } %>
+
+  <% items.forEach(function (item) { %>
+    <% if (item && (item > 0) && (item <= pages) && (pages > 1)) { %>
+      <a class="<%= (page == item) ? 'active': '' %> item" href="?tab=<%= tab %>&p=<%= item %>"><%= item %></a>
+    <% } %>
+  <% }); %>
+
+  <% if (page && page < pages) { %>
+    <a class="icon item" href="?tab=<%= tab %>&p=<%= page + 1 %>">
+      <i class="right arrow icon"></i>
+    </a>
+  <% } %>
+</div>

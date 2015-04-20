@@ -1,0 +1,15 @@
+<% var noReplyTopics = yield $Topic.getNoReplyTopics() %>
+
+<div class="ui cards">
+  <div class="card">
+    <div class="content">
+      <b>无人回复的话题</b>
+      <div class="ui divider"></div>
+      <div class="ui list">
+        <% noReplyTopics.forEach(function (topic) { %>
+          <a class="item summary" href="/topic/<%= topic._id %>"><%= topic.title %></a>
+        <% })%>
+      </div>
+    </div>
+  </div>
+</div>

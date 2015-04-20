@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>N-club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.0/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery-1.11.2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.0/semantic.min.js"></script>
+  </head>
+  <body>
+    <div class="ui fixed menu navbar">
+      <div class="container">
+        <a href="/" class="item"><%= $app.name %></a>
+        <div class="item"><%= $app.description %></div>
+        <div class="right menu">
+          <% if ($this.session.user) { %>
+            <a href="/logout" class="item">登出</a>
+          <% } else { %>
+            <a href="/signup" class="item">注册</a>
+            <a href="/signin" class="item">登录</a>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    
+    <% if ($this.flash && $this.flash.success) { %>
+      <div class="flash">
+        <div class="ui green message"><i class="close icon"></i><%= $this.flash.success %></div>
+      </div>
+    <% } %>
+    <% if ($this.flash && $this.flash.error) { %>
+      <div class="flash">
+        <div class="ui red message"><i class="close icon"></i><%= $this.flash.error %></div>
+      </div>
+    <% } %>
+
+    <script type="text/javascript">
+      $('.message .close').on('click', function() {
+        $(this).closest('.message').fadeOut();
+      });
+    </script>

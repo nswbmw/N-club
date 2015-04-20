@@ -1,0 +1,33 @@
+<% include header %>
+
+<div class="container">
+  <div class="ui two column centered grid">
+    <div class="right floated left aligned four wide column">
+      <% var name = topic.user.name; %>
+      <% include partials/userCard %>
+      <% include partials/noReplyCard %>
+    </div>
+    <div class="left floated  twelve wide column">
+      <div class="ui segment">
+        <h2 style="margin-top:0">
+          <%= topic.title %>
+        </h2>
+        <div class="topic">
+          发布于<%=: topic.created_at | fromNow %> • 
+          作者 <%= topic.user.name %> • 
+          <%= topic.pv %> 次浏览 • 
+          <%= topic.comment %> 个回复 • 
+          <%= topic.tab %>
+        </div>
+        <div class="ui divider"></div>
+        <div class="content">
+          <%-: topic.content | markdown %>
+        </div>
+      </div>
+    
+      <% include comment %>
+    </div>
+  </div>
+</div>
+
+<% include footer %>
