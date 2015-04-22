@@ -16,6 +16,6 @@ var TopicSchema = new Schema({
 });
 
 TopicSchema.index({tab: 1, updated_at: -1});
-TopicSchema.index({name: 1, updated_at: -1});
+TopicSchema.index({'user.name': 1, updated_at: -1});
 
 module.exports = mongoose.model('Topic', TopicSchema);
