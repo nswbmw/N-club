@@ -15,7 +15,7 @@
     "koa-bodyparser": "1.5.0",
     "koa-errorhandler": "0.1.1",
     "koa-flash": "0.1.0",
-    "koa-frouter": "0.3.1",
+    "koa-frouter": "0.3.2",
     "koa-generic-session": "1.8.0",
     "koa-generic-session-mongo": "0.1.1",
     "koa-gzip": "0.1.0",
