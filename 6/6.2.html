@@ -1,0 +1,842 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>co-mocha 和 co-supertest | </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="../7/README.html" />
+    
+    
+    <link rel="prev" href="../6/6.1.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="6.2" data-basepath=".." data-revision="1434709774246">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         前言
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="1/README.html">
+            
+                
+                    <a href="../1/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         ES6 时代来临
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="1/1.1.html">
+            
+                
+                    <a href="../1/1.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         function 和 function*
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="1/1.2.html">
+            
+                
+                    <a href="../1/1.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         yield 和 yield*
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="1/1.3.html">
+            
+                
+                    <a href="../1/1.3.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         co 和 koa
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="2/README.html">
+            
+                
+                    <a href="../2/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         模版系统
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="2/2.1.html">
+            
+                
+                    <a href="../2/2.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         ejs 和 co-ejs
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="2/2.2.html">
+            
+                
+                    <a href="../2/2.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         过滤器
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="3/README.html">
+            
+                
+                    <a href="../3/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         路由
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="4/README.html">
+            
+                
+                    <a href="../4/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         参数验证与错误处理
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="4/4.1.html">
+            
+                
+                    <a href="../4/4.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         koa-scheme
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="4/4.2.html">
+            
+                
+                    <a href="../4/4.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         koa-errorhandler
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="5/README.html">
+            
+                
+                    <a href="../5/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         缓存和配置
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="5.1" data-path="5/5.1.html">
+            
+                
+                    <a href="../5/5.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         koa-router-cache 和 co-cache
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="5/5.2.html">
+            
+                
+                    <a href="../5/5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         config-lite
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="6/README.html">
+            
+                
+                    <a href="../6/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         测试
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="6/6.1.html">
+            
+                
+                    <a href="../6/6.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         单元测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter active" data-level="6.2" data-path="6/6.2.html">
+            
+                
+                    <a href="../6/6.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         co-mocha 和 co-supertest
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="7/README.html">
+            
+                
+                    <a href="../7/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         开发一个论坛系统
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="7/7.1.html">
+            
+                
+                    <a href="../7/7.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         基础项目搭建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="7/7.2.html">
+            
+                
+                    <a href="../7/7.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         路由和功能设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="7/7.3.html">
+            
+                
+                    <a href="../7/7.3.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         自定义模型
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="7/7.4.html">
+            
+                
+                    <a href="../7/7.4.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         theme 的设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.5" data-path="7/7.5.html">
+            
+                
+                    <a href="../7/7.5.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                         注册
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.6" data-path="7/7.6.html">
+            
+                
+                    <a href="../7/7.6.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                         登录与登出
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.7" data-path="7/7.7.html">
+            
+                
+                    <a href="../7/7.7.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.7.</b>
+                        
+                         主页与版块
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.8" data-path="7/7.8.html">
+            
+                
+                    <a href="../7/7.8.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.8.</b>
+                        
+                         用户页
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.9" data-path="7/7.9.html">
+            
+                
+                    <a href="../7/7.9.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.9.</b>
+                        
+                         发表页与话题页
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.10" data-path="7/7.10.html">
+            
+                
+                    <a href="../7/7.10.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.10.</b>
+                        
+                         测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.11" data-path="7/7.11.html">
+            
+                
+                    <a href="../7/7.11.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.11.</b>
+                        
+                         部署
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="8/README.html">
+            
+                
+                    <a href="../8/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         小结
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="9/README.html">
+            
+                
+                    <a href="../9/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         参考文献
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" ></a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_179">
+                    
+                        <h4 id="mocha--co-mocha">mocha 和 co-mocha</h4>
+<p>mocha 是一个流行的 Node.js 测试框架，它同时支持 TDD、BDD 和 exports 风格的测试，并且支持许多优秀的断言库，支持异步和同步的测试，支持多种方式导出结果，同时也支持浏览器端的测试。</p>
+<p>mocha 的 BDD 支持 <code>describe()</code>、<code>context()</code>、<code>it()</code>、 <code>before()</code>、<code>after()</code>、<code>beforeEach()</code>、<code>afterEach()</code>；TDD 支持 <code>suite()</code>、<code>test()</code>、<code>suiteSetup()</code>、<code>suiteTeardown()</code>、<code>setup()</code> 和 <code>teardown()</code>，具体使用见 <a href="http://mochajs.org/" target="_blank">mocha 官方网站</a>。</p>
+<p>我们常用的有 <code>describe()</code> 和 <code>it()</code>：</p>
+<ul>
+<li>describe: 用来描述一组测试的目的或功能，可以嵌套。</li>
+<li>it: 用来描述测试的期望值，一个 describe 可以有多个 it，一个 it 至少有一个断言。</li>
+</ul>
+<p>mocha 的官方 BDD 示例：</p>
+<pre><code>$ npm install -g mocha
+$ mkdir test
+$ vim test/test.js
+
+var assert = require(&quot;assert&quot;)
+describe(&#39;Array&#39;, function(){
+  describe(&#39;#indexOf()&#39;, function(){
+    it(&#39;should return -1 when the value is not present&#39;, function(){
+      assert.equal(-1, [1,2,3].indexOf(5));
+      assert.equal(-1, [1,2,3].indexOf(0));
+    })
+  })
+})
+
+$ mocha
+
+Array
+  #indexOf()
+    ✓ should return -1 when the value is not present
+
+1 passing (12ms)
+</code></pre><p>这里使用了 Node.js 自带的断言库 Assert，npm 上还有些流行的断言库如 should.js, chai 和 expect.js，我们使用 should.js 改写如下：</p>
+<pre><code>var should = require(&quot;should&quot;)
+describe(&#39;Array&#39;, function(){
+  describe(&#39;#indexOf()&#39;, function(){
+    it(&#39;should return -1 when the value is not present&#39;, function(){
+      [1,2,3].should.not.containDeep(5);
+      [1,2,3].should.not.containDeep(0);
+    })
+  })
+})
+
+$ mocha
+
+Array
+  #indexOf()
+    ✓ should return -1 when the value is not present
+
+1 passing (12ms)
+</code></pre><p>可以看出，使用 should.js 可以写出十分语意化的测试代码。</p>
+<p>co-mocha 是一个 mocha 经过 co 库包装后以支持生成器函数的库。使用方式跟 mocha 类似：</p>
+<pre><code>var should = require(&quot;should&quot;)
+describe(&#39;User&#39;, function(){
+  describe(&#39;.addUser&#39;, function(){
+    it(&#39;should return user object contains `name`&#39;, function* (){
+      var user = yield User.addUser({name: &#39;nswbmw&#39;});
+      should(user).have.property(&#39;name&#39;, &#39;nswbmw&#39;);
+    })
+  })
+})
+</code></pre><h4 id="supertest--co-supertest">supertest 和 co-supertest</h4>
+<p>supertest 是一个 HTTP 断言库，使用它可以测试 HTTP 服务，如使用 express、koa 搭建的服务等。结合 express 使用如下：</p>
+<pre><code>var request = require(&#39;supertest&#39;)
+  , express = require(&#39;express&#39;);
+
+var app = express();
+
+app.get(&#39;/user&#39;, function(req, res){
+  res.status(200).send({ name: &#39;tobi&#39; });
+});
+
+describe(&#39;express&#39;, function () {
+  it(&#39;GET /user&#39;, function (done) {
+    request(app)
+      .get(&#39;/user&#39;)
+      .expect(&#39;Content-Type&#39;, /json/)
+      .expect(&#39;Content-Length&#39;, &#39;15&#39;)
+      .expect(200, done);
+  });
+});
+
+$ mocha test.js
+
+express
+  ✓ GET /user (50ms)
+
+1 passing (60ms)
+</code></pre><p>co-supertest 是一个 supertest 经过 co 库包装后以支持生成器函数的库。使用方法也跟 supertest 类似，结合 co-mocha 使用如下：</p>
+<pre><code>var request = require(&#39;co-supertest&#39;)
+  , koa = require(&#39;koa&#39;);
+
+var app = koa();
+
+app.use(function* () {
+  this.body = { name: &#39;tobi&#39; };
+});
+
+describe(&#39;koa&#39;, function () {
+  it(&#39;GET /user&#39;, function* () {
+    yield request(app.callback())
+      .get(&#39;/user&#39;)
+      .expect(&#39;Content-Type&#39;, /json/)
+      .expect(&#39;Content-Length&#39;, &#39;15&#39;)
+      .expect(200)
+      .end();
+  });
+});
+
+$ mocha --require co-mocha test.js
+
+koa
+  ✓ GET /user (46ms)
+
+1 passing (58ms)
+</code></pre>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../6/6.1.html" class="navigation navigation-prev " aria-label="Previous page: 单元测试"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../7/README.html" class="navigation navigation-next " aria-label="Next page: 开发一个论坛系统"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

@@ -1,0 +1,769 @@
+<!DOCTYPE HTML>
+<html lang="en-US" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>koa-router-cache 和 co-cache | </title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 1.0.3">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    
+    <link rel="next" href="../5/5.2.html" />
+    
+    
+    <link rel="prev" href="../5/README.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book"  data-level="5.1" data-basepath=".." data-revision="1434709774246">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+    	
+    	
+    	
+
+        
+
+        
+    
+        
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                         前言
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1" data-path="1/README.html">
+            
+                
+                    <a href="../1/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                         ES6 时代来临
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="1.1" data-path="1/1.1.html">
+            
+                
+                    <a href="../1/1.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                         function 和 function*
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.2" data-path="1/1.2.html">
+            
+                
+                    <a href="../1/1.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                         yield 和 yield*
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="1.3" data-path="1/1.3.html">
+            
+                
+                    <a href="../1/1.3.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                         co 和 koa
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2" data-path="2/README.html">
+            
+                
+                    <a href="../2/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                         模版系统
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="2.1" data-path="2/2.1.html">
+            
+                
+                    <a href="../2/2.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                         ejs 和 co-ejs
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="2.2" data-path="2/2.2.html">
+            
+                
+                    <a href="../2/2.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                         过滤器
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="3" data-path="3/README.html">
+            
+                
+                    <a href="../3/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                         路由
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4" data-path="4/README.html">
+            
+                
+                    <a href="../4/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                         参数验证与错误处理
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="4.1" data-path="4/4.1.html">
+            
+                
+                    <a href="../4/4.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                         koa-scheme
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="4.2" data-path="4/4.2.html">
+            
+                
+                    <a href="../4/4.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                         koa-errorhandler
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5" data-path="5/README.html">
+            
+                
+                    <a href="../5/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                         缓存和配置
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter active" data-level="5.1" data-path="5/5.1.html">
+            
+                
+                    <a href="../5/5.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                         koa-router-cache 和 co-cache
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="5.2" data-path="5/5.2.html">
+            
+                
+                    <a href="../5/5.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                         config-lite
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6" data-path="6/README.html">
+            
+                
+                    <a href="../6/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                         测试
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="6.1" data-path="6/6.1.html">
+            
+                
+                    <a href="../6/6.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                         单元测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="6.2" data-path="6/6.2.html">
+            
+                
+                    <a href="../6/6.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                         co-mocha 和 co-supertest
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7" data-path="7/README.html">
+            
+                
+                    <a href="../7/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                         开发一个论坛系统
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        
+        <li class="chapter " data-level="7.1" data-path="7/7.1.html">
+            
+                
+                    <a href="../7/7.1.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                         基础项目搭建
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.2" data-path="7/7.2.html">
+            
+                
+                    <a href="../7/7.2.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                         路由和功能设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.3" data-path="7/7.3.html">
+            
+                
+                    <a href="../7/7.3.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.3.</b>
+                        
+                         自定义模型
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.4" data-path="7/7.4.html">
+            
+                
+                    <a href="../7/7.4.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.4.</b>
+                        
+                         theme 的设计
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.5" data-path="7/7.5.html">
+            
+                
+                    <a href="../7/7.5.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.5.</b>
+                        
+                         注册
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.6" data-path="7/7.6.html">
+            
+                
+                    <a href="../7/7.6.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.6.</b>
+                        
+                         登录与登出
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.7" data-path="7/7.7.html">
+            
+                
+                    <a href="../7/7.7.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.7.</b>
+                        
+                         主页与版块
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.8" data-path="7/7.8.html">
+            
+                
+                    <a href="../7/7.8.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.8.</b>
+                        
+                         用户页
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.9" data-path="7/7.9.html">
+            
+                
+                    <a href="../7/7.9.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.9.</b>
+                        
+                         发表页与话题页
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.10" data-path="7/7.10.html">
+            
+                
+                    <a href="../7/7.10.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.10.</b>
+                        
+                         测试
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="7.11" data-path="7/7.11.html">
+            
+                
+                    <a href="../7/7.11.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.11.</b>
+                        
+                         部署
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="8" data-path="8/README.html">
+            
+                
+                    <a href="../8/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                         小结
+                    </a>
+                
+            
+            
+        </li>
+    
+        
+        <li class="chapter " data-level="9" data-path="9/README.html">
+            
+                
+                    <a href="../9/README.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                         参考文献
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Published using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Toggle share dropdown"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">Twitter</button>
+                <button type="button" data-sharing="google-plus" class="button">Google</button>
+                <button type="button" data-sharing="facebook" class="button">Facebook</button>
+                <button type="button" data-sharing="weibo" class="button">Weibo</button>
+                <button type="button" data-sharing="instapaper" class="button">Instapaper</button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" ></a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-gitbook_175">
+                    
+                        <p>当一个网站的访问量越来越大后，增加缓存是提升性能的一个既简单又有效的方式。增加缓存的方式大同小异，无非是将缓存层放到业务逻辑层之前，当请求到达时，首先经过缓存层，如果命中缓存则直接返回，如果没有命中则传递到业务逻辑层。缓存的更新机制也大同小异，通常有两种方式：一是设置一个定时器定时更新缓存，二是当业务逻辑层执行结束后更新缓存。第一种方式简单但却浪费资源，第二种方式代码耦合严重也不优雅。而基于 koa 的中间件特性，我们可以写出即简单又优雅也不耦合的缓存中间件。以 koa-router-cache 为例，我们看看它是如何实现的：</p>
+<p style="font-weight:bold">注意：最新的 koa-router-cache@1.2.0 api 有变动，请参考最新的用法。</p>
+<pre><code>var app = require(&#39;koa&#39;)();
+var cache = require(&#39;koa-router-cache&#39;);
+
+var count = 0;
+
+app.use(cache(app, {
+  &#39;/&#39;: 5 * 1000
+}));
+
+app.use(function* () {
+  this.body = count++;
+  if (count === 5) {
+    count = 0;
+    this.app.emit(this.url);
+  }
+});
+
+app.listen(3000, function () {
+  console.log(&#39;listening on 3000.&#39;);
+});
+</code></pre><p>建议读者亲自运行以上代码调试一下，以上代码的意思是：缓存主页并 5 秒更新一次，第一次请求到来时缓存中间件中没有内容，所以传递到下一个中间件，此时将 this.body 赋值为 0 , count  变为 1，当中间件的 downstream 执行完毕后执行 upstream，此时将 this.body = 0 缓存到内存中，并设置 5 秒的生存期，所以，后续 5 秒之内的所有请求都会因命中缓存而返回 0 。5 秒过后，因为缓存中的内容已经过期被删除，所以下个请求到来时没有命中缓存，此时传递到下一个中间件将 this.body 赋值为 1 , count 变为 2，并更新缓存。直到当 count 变为 5 时，count 被重置为 0，并通过事件触发该路径对应的监听器立即删除缓存中的老数据，这样保证了缓存中的数据都是最新的。用户还可通过传入 getter 和 setter 参数手动管理缓存的读取和写入。koa-router-cache 适用于无状态的页面缓存或者 api 服务器，不适用页面会根据用户的登录状态的不同而渲染不同的情况，而且 koa-router-cache 是针对请求路径的缓存实现，粒度较大，我们可以尝试给每一个数据库读取函数加一层 cache，如 co-cache：</p>
+<p style="font-weight:bold">注意：最新的 co-cache@2.0.1 api 有变动，请参考最新的用法。</p>
+<pre><code>var cache = require(&#39;co-cache&#39;);
+
+var getTopicsByTab = function* (tab, p) {
+  var query = {};
+  if (tab) { query.tab = tab; }
+  p = p || 1;
+  return yield Topic.find(query).skip((p - 1) * 10).limit(10).exec();
+};
+
+getTopicsByTab = cache(getTopicsByTab, 10000);
+
+co(function* () {
+  var topics = yield getTopicsByTab(&#39;question&#39;, 2);
+  ...
+}).catch(onerror);
+</code></pre><p>getTopicsByTab 是一个通过标签（tab）和页码（p）去数据库中查询话题（topic）的函数。每次调用 getTopicsByTab 都会查询数据库，假如用 co-cache 包裹并加上过期时间（10秒）后，10 秒内每次调用该函数都是返回缓存中的结果，10 秒后再次调用会执行一次数据库查询操作并缓存结果。co-cache 的适用场景也十分有限，通常用来包裹诸如数据库查询函数。</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../5/README.html" class="navigation navigation-prev " aria-label="Previous page: 缓存和配置"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../5/5.2.html" class="navigation navigation-next " aria-label="Next page: config-lite"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="https://cdn.mathjax.org/mathjax/2.4-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
