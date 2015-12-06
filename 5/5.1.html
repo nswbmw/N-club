@@ -710,23 +710,29 @@ app.listen(3000, function () {
   console.log(&#39;listening on 3000.&#39;);
 });
 </code></pre><p>建议读者亲自运行以上代码调试一下，以上代码的意思是：缓存主页并 5 秒更新一次，第一次请求到来时缓存中间件中没有内容，所以传递到下一个中间件，此时将 this.body 赋值为 0 , count  变为 1，当中间件的 downstream 执行完毕后执行 upstream，此时将 this.body = 0 缓存到内存中，并设置 5 秒的生存期，所以，后续 5 秒之内的所有请求都会因命中缓存而返回 0 。5 秒过后，因为缓存中的内容已经过期被删除，所以下个请求到来时没有命中缓存，此时传递到下一个中间件将 this.body 赋值为 1 , count 变为 2，并更新缓存。直到当 count 变为 5 时，count 被重置为 0，并通过事件触发该路径对应的监听器立即删除缓存中的老数据，这样保证了缓存中的数据都是最新的。用户还可通过传入 getter 和 setter 参数手动管理缓存的读取和写入。koa-router-cache 适用于无状态的页面缓存或者 api 服务器，不适用页面会根据用户的登录状态的不同而渲染不同的情况，而且 koa-router-cache 是针对请求路径的缓存实现，粒度较大，我们可以尝试给每一个数据库读取函数加一层 cache，如 co-cache：</p>
-<p style="font-weight:bold">注意：最新的 co-cache@2.0.1 api 有变动，请参考最新的用法。</p>
-<pre><code>var cache = require(&#39;co-cache&#39;);
 
-var getTopicsByTab = function* (tab, p) {
-  var query = {};
-  if (tab) { query.tab = tab; }
+<pre><code>var cache = require(&#39;co-cache&#39;)();
+
+var getTopicsByPage = cache(function* getTopicsByPage(p) {
   p = p || 1;
-  return yield Topic.find(query).skip((p - 1) * 10).limit(10).exec();
-};
-
-getTopicsByTab = cache(getTopicsByTab, 10000);
-
+  return yield client.db('test').collection('test').find().skip((p - 1) * 10).limit(10).toArray();
+}, {
+  prefix: 'cache:',
+  key: function (p) {
+    p = p || 1;
+    if (p >= 3) {
+      return false; // 只缓存第1、2页
+    }
+    return this.name + ':' + (p || 1);
+  },
+  expire: 10000
+});
+ 
 co(function* () {
-  var topics = yield getTopicsByTab(&#39;question&#39;, 2);
+  var topics = yield getTopicsByPage(2);
   ...
 }).catch(onerror);
-</code></pre><p>getTopicsByTab 是一个通过标签（tab）和页码（p）去数据库中查询话题（topic）的函数。每次调用 getTopicsByTab 都会查询数据库，假如用 co-cache 包裹并加上过期时间（10秒）后，10 秒内每次调用该函数都是返回缓存中的结果，10 秒后再次调用会执行一次数据库查询操作并缓存结果。co-cache 的适用场景也十分有限，通常用来包裹诸如数据库查询函数。</p>
+</code></pre><p>getTopicsByPage 是一个通过页码（p）去数据库中查询话题（topic）的函数。不使用 co-cache 的话每次调用 getTopicsByPage 都会查询数据库，用 co-cache 包裹并加上过期时间（10秒）后，10 秒内每次调用该函数（查询第 1、2 页的话题）都是返回缓存中的结果，10 秒后再次调用会执行一次数据库查询操作并缓存结果。co-cache 的适用场景也十分有限，通常用来包裹诸如数据库查询函数。</p>
 
                     
                     </section>

@@ -763,7 +763,7 @@ co(function* () {
     }
   });
 }
-</code></pre><p>不难看出， co 将所有 yield 后面的表达式都封装成了 Promise 对象（本身也返回一个Promise 对象），只有当前表达式执行结束后（即调用 .then），然后会在回调函数内执行 gen.next(res) 将 res 赋值给 yield 左侧的变量并执行到下一个 yield，下一个表达式执行结束后又调用 gen.next()，如此循环，直至 done 变为 true。需要特别注意的是：ES6 中的 yield 后面可以跟任意类型的值，但 co 对此做了限制，只允许 yield 后跟 thunk, promise, generator, generatorFunction, array 或者 object。试想一下，如果 <code>var book = yield &#39;Node.js实战&#39;</code> 和 <code>var book = &#39;Node.js实战&#39;</code> 作用是一样的话，那我们何必去用 yield 呢？</p>
+</code></pre><p>不难看出， co 将所有 yield 后面的表达式都封装成了 Promise 对象（本身也返回一个Promise 对象），只有当前表达式执行结束后（即调用 .then），然后会在 onFulfilled 函数内执行 gen.next(res) 将 res 赋值给 yield 左侧的变量并执行到下一个 yield，下一个表达式执行结束后又调用 gen.next()，如此循环，直至 done 变为 true。需要特别注意的是：ES6 中的 yield 后面可以跟任意类型的值，但 co 对此做了限制，只允许 yield 后跟 thunk, promise, generator, generatorFunction, array 或者 object。试想一下，如果 <code>var book = yield &#39;Node.js实战&#39;</code> 和 <code>var book = &#39;Node.js实战&#39;</code> 作用是一样的话，那我们何必去用 yield 呢？</p>
 <h4 id="">上下文</h4>
 <p>从上面 co 的核心代码可以看出，co 会将所有可遍历或可迭代的对象转换成 Promise 对象，并在当前上下文中执行：</p>
 <pre><code>toPromise.call(ctx, ret.value);

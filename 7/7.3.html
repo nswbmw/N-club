@@ -787,7 +787,9 @@ exports.getUserByName = function (name) {
 };
 </code></pre><p><strong>topic.js</strong></p>
 <pre><code>var Topic = require(&#39;../models&#39;).Topic;
-var cache = require(&#39;co-cache&#39;);
+var cache = require(&#39;co-cache&#39;)({
+  expire: 10000
+});
 
 //新建一个话题
 exports.addTopic = function (data) {
@@ -804,7 +806,12 @@ exports.getTopicsByTab = cache(function getTopicsByTab(tab, p) {
   var query = {};
   if (tab) { query.tab = tab; }
   return Topic.find(query).skip((p - 1) * 10).sort(&#39;-updated_at&#39;).limit(10).select(&#39;-content&#39;).exec();
-}, 10000);
+}, {
+  key: function (tab, p) {
+    tab = tab || 'all';
+    return this.name + ':' + tab + ':' + p;
+  }
+});
 
 //获取用户所有话题
 exports.getTopicsByName = function (name) {
@@ -819,14 +826,19 @@ exports.incCommentById = function (id) {
 //获取5条最新未评论的话题
 exports.getNoReplyTopics = cache(function getNoReplyTopics() {
   return Topic.find({comment: 0}).sort(&#39;-updated_at&#39;).limit(5).select(&#39;title&#39;).exec();
-}, 10000);
+});
 
 //获取不同标签的话题数
-exports.getTopicsCount = cache(function (tab) {
+exports.getTopicsCount = cache(function getTopicsCount(tab) {
   var query = {};
   if (tab) { query.tab = tab; }
   return Topic.count(query).exec();
-}, 10000);
+}, {
+  key: function (tab) {
+    tab = tab || 'all';
+    return this.name + ':' + tab;
+  }
+});
 </code></pre><p><strong>comment.js</strong></p>
 <pre><code>var Comment = require(&#39;../models&#39;).Comment;
 
