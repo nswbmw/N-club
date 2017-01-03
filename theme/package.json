@@ -5,8 +5,8 @@
   "locale": "zh-cn",
   "tabs": ["全部", "问答", "分享", "吐槽", "招聘"],
   "dependencies": {
-    "gravatar": "1.1.0",
-    "moment": "2.9.0",
-    "markdown-it": "4.0.3"
+    "gravatar": "1.6.0",
+    "moment": "2.17.1",
+    "markdown-it": "8.2.2"
   }
 }

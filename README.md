@@ -5,14 +5,6 @@
 在线演示：[https://n-club.herokuapp.com/](https://n-club.herokuapp.com/)。
 教程：[https://nswbmw.github.io/N-club](https://nswbmw.github.io/N-club)。
 
-截至 2015-12-06 的版本变更：
-
-```
-koa-router-cache            0.3.0  →   1.2.0 (breaking change)
-```
-
-**注意：** 标注为 `breaking change` 的模块请参考最新的 README 使用文档。
-
 **本教程亦收录于《Node.js实战（第2季）》第五章，购书链接：**
 
 当当: [http://product.dangdang.com/23783541.html](http://product.dangdang.com/23783541.html)  
