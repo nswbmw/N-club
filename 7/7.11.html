@@ -695,17 +695,27 @@
 DEBUG=* NODE_ENV=default pm2 start app.js --node-args=&quot;--harmony&quot; --name &quot;N-club&quot;
 </code></pre><p>然后我们就可以使用以下命令启动论坛了 ：</p>
 <pre><code>sh bin/start
-</code></pre><p>最后，不要忘记，如果要部署到线上的话，我们要切换到 production 环境（即 <code>NODE_ENV=production</code>），并且实现相应的 config/production.js 和 config/production.scheme.js。</p>
-<h4 id="-mongolab">申请 MongoLab</h4>
-<p><a href="https://mongolab.com" target="_blank">MongoLab</a> 是一个 mongodb 云数据库提供商，用户可选择 500MB 空间的免费套餐用来测试。注册成功后，点击右上角的 <code>Create New</code> 创建一个数据库，成功后点击进入到该数据库详情页，注意页面中有一行黄色的警告：</p>
+</code></pre>
+<p>还有种常用的方式是使用 npm scripts，将：</p>
+<pre><code>"start": "NODE_ENV=default DEBUG=* node --harmony app"</code></pre>
+修改为：
+<pre><code>"start": "DEBUG=* NODE_ENV=default pm2 start app.js --node-args='--harmony' --name 'N-club'"</code></pre>
+<p>最后，不要忘记，如果要部署到线上的话，我们要切换到 production 环境（即 <code>NODE_ENV=production</code>），并且实现相应的 config/production.js 和 config/production.scheme.js。</p>
+<h4 id="-mongolab">申请 mLab</h4>
+<p><a href="https://mlab.com" target="_blank">mLab</a> 是一个 mongodb 云数据库提供商，用户可选择 500MB 空间的免费套餐用来测试。注册成功后，点击右上角的 <code>Create New</code> 创建一个数据库，成功后点击进入到该数据库详情页，注意页面中有一行黄色的警告：</p>
 <pre><code>A database user is required to connect to this database. Click here to create a new one.
 </code></pre><p>每个数据库至少需要一个 user，所以我们点击 <code>Click here</code> 创建一个用户。最后将分配给我们的类似下面的 mongodb url：</p>
-<pre><code>mongodb://&lt;dbuser&gt;:&lt;dbpassword&gt;@ds045478.mongolab.com:45478/n-club
+<pre><code>mongodb://&lt;dbuser&gt;:&lt;dbpassword&gt;@ds045478.mlab.com:45478/n-club
 </code></pre><p>覆盖配置文件中的：</p>
 <pre><code>mongodb://127.0.0.1:27017/club
 </code></pre><p>并将 <code>&lt;dbuser&gt;</code> 和 <code>&lt;dbpassword&gt;</code> 替换为刚才创建的用户名和密码。</p>
 <h4 id="-heroku">部署到 Heroku</h4>
 <p>Heroku 是一个支持多种编程语言的云服务平台，Heroku 也提供免费的基础套餐供开发者测试使用。现在，我们将论坛部署到 Heroku。</p>
+<p>在之前，我们需要修改部分代码。</p>
+<p>1. 在根目录下新建 Procfile 文件，添加如下内容：</p>
+<pre><code>web: npm start</code></pre>
+Procfile 文件告诉 Heroku 该使用什么命令启动一个 web 服务。
+<p>2. 将 co-cache 的 redis 配置指向远程的 redis 地址。</p>
 <p>首先，需要到 <a href="https://toolbelt.heroku.com/" target="_blank">https://toolbelt.heroku.com/</a> 下载安装 Heroku 的命令行工具包 toolbelt。然后登录（如果没有账号，请注册）到 Heroku 的 Dashboard，点击右上角 <code>+</code> 创建一个应用。创建成功后运行：</p>
 <pre><code>$ heroku login
 </code></pre><p>填写正确的 email 和 password 验证通过后，本地会产生一个 SSH public key，然后输入以下命令：</p>

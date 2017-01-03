@@ -715,9 +715,17 @@ app.delete(&#39;/topic/:id&#39;, ...);// 删除某个话题
 var router = require(&#39;koa-frouter&#39;);
 
 var app = koa();
-app.use(router(app, &#39;/router&#39;));
+app.use(router(app, &#39;./router&#39;));
 app.listen(3000);
-</code></pre><p>koa-frouter 只是做了些简单的工作，即遍历指定目录下所有文件，将所有以 <code>*</code> 开头的替换为 <code>:</code> 并忽略后缀名（文件名不能包含冒号），如 week 目录下 <code>*id.js</code> 的路径为 <code>/posts/week/*id.js</code> 最终会转换为 <code>/posts/week/:id</code> ，同时 <code>/posts/week/*id.js</code> 文件导出了 get、post 等方法对应不同的 method 请求，通过 require 引入并通过 app.use 挂载。相当于以下代码：</p>
+</code></pre>
+<strong>注意：</strong>Windows 不支持文件名带 *，可用 _ 代替，如 *id.js -> _id.js，然后修改为：
+<pre><code>app.use(router(app, {
+  root: './router',
+  wildcard: '_'
+}));
+</code></pre>
+
+<p>koa-frouter 只是做了些简单的工作，即遍历指定目录下所有文件，将所有以 <code>*</code> 开头的替换为 <code>:</code> 并忽略后缀名（文件名不能包含冒号），如 week 目录下 <code>*id.js</code> 的路径为 <code>/posts/week/*id.js</code> 最终会转换为 <code>/posts/week/:id</code> ，同时 <code>/posts/week/*id.js</code> 文件导出了 get、post 等方法对应不同的 method 请求，通过 require 引入并通过 app.use 挂载。相当于以下代码：</p>
 <pre><code>var koa = require(&#39;koa&#39;);
 var _ = require(&#39;koa-route&#39;);
 
